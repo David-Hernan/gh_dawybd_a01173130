@@ -156,33 +156,74 @@ function reloj(hora,minuto,segundo){
     this.getHora=getHora;
     this.getMinuto=getMinuto;
     this.getSegundo=getSegundo;
+    this.setHora=setHora;
+    this.setMinuto=setMinuto;
+    this.setSegundo=setSegundo;
 }
+//Getters
 function getHora(){
     texto="La hora es: "+this.hora;
-    document.getElementById("resp_ejer6").innerHTML = texto;
+    document.getElementById("resp_ejer6_a").innerHTML = texto;
+    return texto;
 }
 function getMinuto(){
     texto="El minuto es: "+this.minuto;
-    document.getElementById("resp_ejer6").innerHTML = texto;
+    document.getElementById("resp_ejer6_b").innerHTML = texto;
+    return texto;
 }
 function getSegundo(){
     texto="El segundo es: "+this.segundo;
-    document.getElementById("resp_ejer6").innerHTML = texto;
+    document.getElementById("resp_ejer6_c").innerHTML = texto;
+    return texto;
+}
+//Setters
+function setHora(){
+    this.hora++;
+    if(this.hora>=24){
+        this.hora=0;
+    }
+}
+function setMinuto(){
+    this.minuto++;
+    if(this.minuto>=60){
+        this.minuto=0;
+    }
+}
+function setSegundo(){
+    this.segundo++;
+    if(this.segundo>=60){
+        this.segundo=0;
+    }
 }
 
-mi_reloj = new reloj(12,59,34);
+mi_reloj = new reloj(12,59,34); 
+console.log(mi_reloj);
 
 //Botones objeto
+//Consultar
 function ejer6_h(){
-    mi_reloj.getHora;
-    console.info("si");
+    laHora=mi_reloj.getHora();
+    console.info(laHora); 
 }
 function ejer6_m(){
-    mi_reloj.getMinuto;
-    console.info("si");
+    elMin=mi_reloj.getMinuto();
+    console.info(elMin);
 }
 function ejer6_s(){
-    mi_reloj.getSegundo;
-    console.info("si");
+    elSeg=mi_reloj.getSegundo();
+    console.info(elSeg);
+}
+//Incrementar
+function ejer6_hs(){
+    mi_reloj.setHora();
+    mi_reloj.getHora();
+}
+function ejer6_ms(){
+    mi_reloj.setMinuto();
+    mi_reloj.getMinuto();
+}
+function ejer6_ss(){
+    mi_reloj.setSegundo();
+    mi_reloj.getSegundo();
 }
 
