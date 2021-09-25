@@ -3,33 +3,19 @@ const app = express();
 
 const bodyParser = require('body-parser');
 const phishing = require('./routes/phishing');
-const bonita = require('./routes/bonita');
+const labs = require('./routes/labs');
+const menu = require('./routes/menu');
 
 app.use(bodyParser.urlencoded({extended: false}));
 
 //Ruta de phishing
 app.use('/phishing', phishing)
 
-//Ruta de página bonita
-app.use('/bonita', bonita)
+//Ruta de página de labs (Lab7 y preguntas del 12)
+app.use('/labs', labs)
 
-//request y response son objetos
-app.use((request, response, next) => {
-    console.log('Primer Middleware!');
-    console.log(request.body);
-    next(); 
-});
-
-app.use('/ruta/apelliodos', (request, response, next) => {
-    console.log('Tercer Middleware!');
-    response.send('Respuesta de la ruta "/ruta/apelliodos"'); 
-});
-
-//Agregar una ruta
-app.use('/ruta', (request, response, next) => {
-    console.log('Segundo Middleware!');
-    response.send('Respuesta de la ruta "/ruta"'); 
-});
+//Página de inicio (Menú principal)
+app.use('', menu)
 
 //Página no encontrada
 app.use((request, response, next) => {

