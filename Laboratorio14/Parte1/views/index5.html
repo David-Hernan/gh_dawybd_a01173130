@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+    <head> 
+        <link rel="stylesheet" href="css/style.min.css">
+
+        <h2>David Hernán García Fernández - A01173130</h2>
+        <h3>Información de contacto: a01173130@itesm.mx</h3>
+        <p id="description">Soy estudiante de ISDR. Tengo experiencia programando en C, Java, Python, VHDL y Verilog; así como en la implementación de algoritmos de Machine Learning y visión artificial. Las actividades que me gusta realizar son: correr, bailar, leer, viajar, y aprender cosas nuevas. Me encanta la robótica.</p>
+        <br>
+    </head>
+    <body>
+        <a href="/labs">Volver al menú de laboratorios</a>
+        <header><h3><strong>Ejercicios</strong></h3></header>
+        <header><h4><strong>Laboratorio 5:</strong></h4></header>
+        <dl><ol>
+            <dt class="preguntas"><li><strong>Entrada: un número pedido con un prompt. Salida: Una tabla con los números del 1 al número dado con sus cuadrados y cubos.</strong></li></dt>
+            <dd><br><button class="buttonelegante" onclick= "ejer1()">Ejecutar Ejercicio 1</button></dd>
+            <br>
+
+            <dt class="preguntas"><li><strong>Entrada: Usando un prompt se pide el resultado de la suma de 2 números generados de manera aleatoria. Salida: La página debe indicar si el resultado fue correcto o incorrecto, y el tiempo que tardó el usuario en escribir la respuesta.</strong></li></dt>
+            <dd><br><button class="buttonelegante" onclick= "ejer2()">Ejecutar Ejercicio 2</button></dd>
+            <dd id="resp_ejer2"></dd>
+            <dd id="resp_ejer2_b"></dd>
+            <br>
+
+            <dt class="preguntas"><li><strong>Función: contador. Parámetros: Un arreglo de números. Regresa: La cantidad de números negativos en el arreglo, la cantidad de 0's, y la cantidad de valores mayores a 0 en el arreglo.</strong></li></dt>
+            <dd><p>Seleccione un conjunto de datos de prueba:</p></dd>
+            <dd><br><button class="buttonelegante" onclick= "ejer3_a()">Conjunto 1 (12, 34, 0, 5, -5, -9, 10, 0, 0, 6)</button></dd>
+            <dd><br><button class="buttonelegante" onclick= "ejer3_b()">Conjunto 2 (-40, 0, 0, -7, 0, 5, -5, 0, 8, -100)</button></dd>
+            <br>
+            <dd id="resp_ejer3"></dd>
+            <br> 
+
+            <dt class="preguntas"><li><strong>Función: promedios. Parámetros: Un arreglo de arreglos de números. Regresa: Un arreglo con los promedios de cada uno de los renglones de la matriz.</strong></li></dt>
+            <dd><br><button class="buttonelegante" onclick= "ejer4_a()">Conjunto 1 [1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12], [13, 14, 15, 16]</button></dd>
+            <dd><br><button class="buttonelegante" onclick= "ejer4_b()">Conjunto 2 [8, 24, 3, 6], [8, 2, 9, 45], [100, 99, 45, 16], [80, 71, 56, 78]</button></dd>
+            <br>
+            <dd id="resp_ejer4"></dd>
+            <br> 
+
+            <dt class="preguntas"><li><strong>Función: inverso. Parámetros: Un número. Regresa: El número con sus dígitos en orden inverso.</strong></li></dt>
+            <dd><br><button class="buttonelegante" onclick= "ejer5_a()">Conjunto 1 (12345)</button></dd>
+            <dd><br><button class="buttonelegante" onclick= "ejer5_b()">Conjunto 2 (58297)</button></dd>
+            <br>
+            <dd id="resp_ejer5"></dd> 
+            <br> 
+
+            <dt class="preguntas"><li><strong> Problema de tu elección: Reloj con setters y getters.</strong></li></dt>
+            <table>
+                <tbody>
+                    <tr>
+                        <td><dd id="resp_ejer6_a"></dd></td>
+                        <td><dd id="resp_ejer6_b"></dd></td>
+                        <td><dd id="resp_ejer6_c"></dd></td>
+                    </tr>
+                    <tr>
+                        <td><dd><br><button class="buttonelegante" onclick= "ejer6_h()">Obtener Hora</button></dd></td>
+                        <td><dd><br><button class="buttonelegante" onclick= "ejer6_m()">Obtener Minuto</button></dd></td>
+                        <td><dd><br><button class="buttonelegante" onclick= "ejer6_s()">Obtener Segundo</button></dd></td>
+                    </tr>
+                    <tr>
+                        <td><dd><br><button class="buttonelegante" onclick= "ejer6_hs()">Incrementar Hora</button></dd></td>
+                        <td><dd><br><button class="buttonelegante" onclick= "ejer6_ms()">Incrementar Minuto</button></dd></td>
+                        <td><dd><br><button class="buttonelegante" onclick= "ejer6_ss()">Incrementar Segundo</button></dd></td>
+                    </tr>
+                </tbody>
+            </table> 
+        </ol></dl>    
+        <br>
+
+        <header><h3><strong>Preguntas a responder</strong></h3></header>
+        <header><h4><strong>Laboratorio 5:</strong></h4></header>
+        <dl><ol>
+            <dt class="preguntas"><li><strong>¿Qué diferencias y semejanzas hay entre Java y JavaScript?</strong></li></dt>
+            <dd><p>La principal diferencia es el uso: JavaScript se utiliza para páginas web mientras que Java se emplea en aplicaciones integradas (Barbier, 2019). Por otro lado, Java es un lenguaje compilado y JavaScript es uno interpretado. Sus semejanzas son que ambos son lenguajes de programación y que son orientados a objetos.</p></dd>
+    
+            <dt class="preguntas"><li><strong>¿Qué métodos tiene el objeto Date?</strong></li></dt>
+            <dd><p>
+                <li value="1">Date.getDay(): Regresa el día de la semana de acuerdo con la hora local</li>
+                <li>Date.getYear(): Regresa el año</li>
+                <li>Date.setYear(): Establece el año indicado</li>
+                <li>Date.getUTCMonth(): Regresa el mes de acuerdo con la hora universal</li>
+                <li>Date.setHours(): Establece la hora de acuerdo con la hora local y regresa la hora en milisegundos</li>
+            </p></dd>
+            <p>(Jorge, s.f.).</p>
+    
+            <dt class="preguntas"><li value="3"><strong>¿Qué métodos tienen los arreglos?</strong></li></dt>
+            <dd><p>
+                <li value="1">concat()</li>
+                <li>indexOf()</li>
+                <li>lastIndexOf()</li>
+                <li>reverse()</li>
+                <li>slice()</li>
+                <li>sort()</li>
+                <li>toString()</li>
+            </p></dd>
+            <p>(kamilore, 2018).</p>
+
+            <dt class="preguntas"><li value="4"><strong>¿Cómo se declara una variable con alcance local dentro de una función?</strong></li></dt>
+            <dd><p>Se declara con la palabra reservada "let", aunque también se podría usar "var", siempre y cuando se declare dentro de los corchetes de la función.</p></dd>
+    
+            <dt class="preguntas"><li><strong>¿Qué implicaciones tiene utilizar variables globales dentro de funciones?</strong></li></dt>
+            <dd><p>Podrían haber problemas con la actualización del valor de la variable el cual se modificaría con cada llamada de la función, provocando que sea difícil controlarlo si no existe una instrucción que reinicie su valor en cada llamada de la función.</p></dd>
+    
+            <dt class="preguntas"><li><strong>¿Qué método de String se puede utilizar para buscar patrones con expresiones regulares?¿Para qué podrías utilizar esto en una aplicación web?</strong></li></dt>
+            <dd><p>search(). Este método devuelve la posición de la coincidencia en la cadena. Puede ser útil en aplicaciones donde sea necesario validar la información de entrada con respecto a una ya existente.</p></dd>  
+        </ol></dl>  
+        
+        <br>
+
+        <head><h3><strong>Bibliografía:</strong></h3></head>
+        <li>Barbier, A. (2019). ¿Cuál es la diferencia entre Java vs JavaScript?. De Wild Code School. Sitio web: <a>https://www.wildcodeschool.com/es-ES/blog/diferencia-entre-java-vs-javascript </a></li>
+        <li>Jorge. (s.f.). Class Date. De dim.uchile.cl. Sitio web: <a>http://www.dim.uchile.cl/~jorge/flash/ActionScriptDictionary/12_ASD170.html </a></li>
+        <li>Kamilore. (2018). Métodos Arrays JavaScript. De Tutobasico. Sitio web: <a>https://tutobasico.com/metodos-arrays-javascript/</a></li>
+            <br><br>
+            
+        <script src="js/js5.js"></script>    
+    </body>
+    <footer>
+        <header>Editor HTML: <a href="https://code.visualstudio.com/"><span style="color:#21c256">Visual Studio Code</span> </a></header> 
+    </footer>
+</html>

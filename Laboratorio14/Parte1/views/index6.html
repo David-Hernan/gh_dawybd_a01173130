@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <style>
+            table {
+                color: blue
+            }   
+        </style>
+        <link rel="stylesheet" href="css/style.min.css">
+
+        <h2>David Hernán García Fernández - A01173130</h2>
+        <h3>Información de contacto: a01173130@itesm.mx</h3>
+        <p id="description">Soy estudiante de ISDR. Tengo experiencia programando en C, Java, Python, VHDL y Verilog; así como en la implementación de algoritmos de Machine Learning y visión artificial. Las actividades que me gusta realizar son: correr, bailar, leer, viajar, y aprender cosas nuevas. Me encanta la robótica.</p>
+        <br>
+
+    </head>
+    <body>
+        <a href="/labs">Volver al menú de laboratorios</a>
+        <!--<h1 id="titulo_menu" onmouseover="colorea_azul()" onmouseleave="colorea_verde()">Menú</h1>
+        <button id="boton_menu">Laboratorio 6</button>
+        <div id="platillos"></div>-->
+        <h1 id="nombre_lab" onmouseover="colorea_rojo()" onmouseleave="colorea_negro()">Laboratorio 6</h1>
+
+        <h2>Verificador de contraseñas:</h2>
+        <p>Una contraseña segura debe tener: </p>
+        <li>Una longitud mayor o igual a 8 caracteres.</li>
+        <li>No tener espacios en blanco.</li>
+        <li>Debe de incluir números</li>
+        <li>Combinación de mayúsculas y minúsculas</li>
+        <li>Debe de tener al menos uno de los siguientes caracteres especiales: - * ? ! @ # $ / () {} = . , ; :     </li>
+        <p><h3>Ingrese su contraseña</h3></p>
+        <input type="text" name="ingreso" id="ingreso">
+        <div id="verificacion"></div>
+        <br>
+        <dd><br><button class="buttonelegante" onclick= "boton_verificador()">Verificar</button></dd>
+
+        <br>
+        <p><h3>Repita su contraseña</h3></p>
+        <input type="text" name="rep_pass" id="rep_pass">
+        <div id="verific_pass"></div>
+        <br>
+
+        <h2>Página de Ventas:</h2>
+        <td><button class="buttonelegante" onclick= "info_taxes()">FAQ</button></td>
+        <table>
+            <tr>
+                <td><h4>Multímetros</h4></td>
+                <td><h4>Arduinos</h4></td>
+                <td><h4>Protoboard</h4></td>
+            </tr>
+            <tr>
+                <td><img src="https://www.demaquinasyherramientas.com/wp-content/uploads/2018/08/Multimetro-seleccionar.jpg" WIDTH=400 HEIGHT=200></td>
+                <td><img src="https://www.electronicoscaldas.com/2612-thickbox_default/sistema-de-desarrollo-arduino-uno-r3-clon.jpg" WIDTH=350 HEIGHT=220></td>
+                <td><img src="https://www.iberobotics.com/wp-content/uploads/2017/08/bradboard_830_puntos_placa-de-protipos-4-e1501847773913.jpg" WIDTH=350 HEIGHT=220></td>
+            </tr>
+            <tr>
+                <td><p>Multímetro de excelente calidad. $300.</p></td>
+                <td><p>Arduino UNO con cable USB. $179</p></td>
+                <td><p>Protoboard de 830 puntos. $55</p></td>
+            </tr>
+            <tr>
+                <td><button class="buttonelegante" onclick= "add_multi()">Agregar al carrito</button></td>
+                <td><button class="buttonelegante" onclick= "add_ardui()">Agregar al carrito</button></td>
+                <td><button class="buttonelegante" onclick= "add_proto()">Agregar al carrito</button></td>
+            </tr>
+        </table>
+
+        <br><br>
+        <h4>Carrito:</h4>
+        <div id="precios"></div>
+        <br>
+        <strong><div id="precio_final"></div></strong>
+        <br>
+        <td><button class="buttonelegante" onclick= "reset_carrito()">Vaciar el carrito</button></td>
+        <br><br>
+        <div id="carriprotos"></div>
+        <br>
+        <div id="carrimulti"></div>
+        <br>
+        <div id="carriarduinos"></div>
+        <br><br>
+
+        <header><h3><strong>Preguntas a responder</strong></h3></header>
+
+        <dl><ol>
+            <dt class="preguntas"><li><strong>¿Por qué es una buena práctica usar JavaScript para checar que sean válidos los inputs de las formas antes de enviar los datos al servidor?</strong></li></dt>
+            <dd><p>Para evitar que el servidor almacene información que es errónea ya que esto podría provocar que algunas funciones del mismo fallen. Por ejemplo, no se podrán realizar operaciones si el usuario ingresa información del tipo String cuando se esperaban datos tipo Int.</p></dd>
+
+            <dt class="preguntas"><li><strong>¿Cómo puedes saltarte la seguridad de validaciones hechas con JavaScript?</strong></li></dt>
+            <dd><p>Desde la consola, identificando y modificando las variables que afectan dichas validaciones de seguridad o, desactivando JavaScript desde el navegador.</p></dd>
+
+            <dt class="preguntas"><li><strong>Si te puedes saltar la seguridad de las validaciones de JavaScript, entonces ¿por qué la primera pregunta dice que es una buena práctica?</strong></li></dt>
+            <dd><p>Porque la primera pregunta sirve para impedir la entrada de datos erróneos. Referente a la seguridad, la misma no debe dejarse sólo al nivel de JavaScript pues existen otros métodos que deben implementarse para poder garantizarla.</p></dd>
+        </ol></dl>
+
+        <br>
+
+        <head><h3><strong>Bibliografía:</strong></h3></head>
+        <li>Universidad FASTA (s.f.). Características de una contraseña segura. Sitio web: <a>https://www13.ufasta.edu.ar/serviciosweb/ayuda_pass.htm </a></li>
+
+        <script src="js/poe.js"></script>
+    </body>
+</html>
