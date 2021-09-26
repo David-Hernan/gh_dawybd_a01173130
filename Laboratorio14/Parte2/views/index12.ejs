@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <%- include('includes/head.ejs') %>
+
+    <body>
+        <link rel="stylesheet" href="../css/style.min.css">
+        <div  class="problem">
+            <br>
+            <a href="/labs">Volver al menú de laboratorios</a>
+            <br><br>
+            <h3>Laboratorio 12</h3>
+            <header><strong><h4>Pregunta a responder</h4></strong></header>
+            <strong>Describe el archivo package.json.</strong>
+            <p>El archivo package.json contiene los metadatos que son relevantes para el proyecto al proporcionar información a npm lo que permite manejar las dependencias del mismo y conocer su información (nodejs.org, 2011).</p>
+            <p>El archivo contiene varias secciones como las siguientes: name, que tiene el nombre del proyecto; versión, que indica la versión; description, que provee una descripción sobre el proyecto; main, que es el punto de entrada del programa; repository, que indica la ubicación del repositorio; scripts, que funciona como un diccionario donde se contienen los comandos de script; dependencies, que asigna un nombre de paquete a un rango de versiones; devDependencies, que mapea los recursos adicionales requeridos por el proyecto; entre otros (npmDocs, s.f.).</p>
+            <br><br>
+            <strong>Bibliografía:</strong>
+            <li>nodejs.org (2011). What is the file `package.json`?. URL: <a href="https://nodejs.org/en/knowledge/getting-started/npm/what-is-the-file-package-json/">https://nodejs.org/en/knowledge/getting-started/npm/what-is-the-file-package-json/</a></li>
+            <li>npmDocs.(s.f.). package.json. URL: <a href="https://docs.npmjs.com/cli/v7/configuring-npm/package-json">https://docs.npmjs.com/cli/v7/configuring-npm/package-json</a></li>
+            <br><br>
+        </div>
+    </body>
+    <%- include('includes/footer.ejs') %>
+</html>
