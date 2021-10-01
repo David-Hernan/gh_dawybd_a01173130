@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 const phishing = require('./routes/phishing');
 const labs = require('./routes/labs');
 const menu = require('./routes/menu');
+const muestras = require('./routes/muestras');
 
 //Devolver como respuesta un HTML, es un módulo
 const path = require('path');
@@ -24,6 +25,9 @@ app.use('/phishing', phishing)
 
 //Ruta de página de labs (Lab7 y preguntas del 12)
 app.use('/labs', labs)
+
+//Ruta de página muestra (Lab15)
+app.use('/muestras', muestras)
 
 //Página de inicio (Menú principal)
 app.use('', menu)
