@@ -1,0 +1,64 @@
+const express = require('express');
+const app = express(); 
+
+const bodyParser = require('body-parser');
+//Agregar el cookieParser
+const cookieParser = require('cookie-parser');
+//Agrega express-session para manejo de variables de sesión con express
+const session = require('express-session');
+
+const phishing = require('./routes/phishing');
+const labs = require('./routes/labs');
+const menu = require('./routes/menu');
+const muestras = require('./routes/muestras');
+const rutasUsers = require('./routes/login');
+
+//Devolver como respuesta un HTML, es un módulo
+const path = require('path');
+
+//Middleware
+app.set('view engine', 'ejs');
+app.set('views', 'views');
+
+//Configura como carpeta estática la carpeta llamada "public"
+//Para incluir los css y javascripts
+app.use(express.static(path.join(__dirname, 'public')));
+
+app.use(bodyParser.urlencoded({extended: false}));
+//Agregar el cookieParser
+app.use(cookieParser());
+//Agregar el express-session
+app.use(session({
+    //String secreto es aleatorio y no muy largo, valor que usa sesión para que otros no puedan romperla, tipo password interno
+    secret: 'vjabfiubaviabviubfviub84y38r7y18rbfqfu87fb82fub193487fb28fb8rubf', 
+    //Guarda a cada ratos los valores de sesión. En falso los cambia sólo cuando algo cambia
+    resave: false, //La sesión no se guardará en cada petición, sino sólo se guardará si algo cambió 
+    //En falso asegura que no se guarda petición cuando no se necesita
+    saveUninitialized: false, //Asegura que no se guarde una sesión para una petición que no lo necesita
+}));
+
+//Ruta de login
+app.use('/login', rutasUsers)
+
+//Ruta de phishing
+app.use('/phishing', phishing)
+
+//Ruta de página de labs (Lab7 y preguntas del 12)
+app.use('/labs', labs)
+
+//Ruta de página muestra (Lab15)
+app.use('/muestras', muestras)
+
+//Página de inicio (Menú principal)
+app.use('', menu)
+
+//Página no encontrada
+app.use((request, response, next) => {
+    response.status(404); 
+    let noen = '<head><meta charset="UTF-8"></head>';
+    noen += '<h1>Esta página no existe...</h1>';
+    noen += '<img src="https://i1.wp.com/media.giphy.com/media/8L0Pky6C83SzkzU55a/source.gif?w=525&ssl=1">';
+    response.send(noen);
+});
+
+app.listen(3000);
