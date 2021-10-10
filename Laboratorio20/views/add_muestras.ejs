@@ -9,6 +9,7 @@
             <div class="col s12 m6 l4">
                 
                 <form action="/muestras/add" method="POST">
+                    <input type="hidden" name="_csrf" value="<%= csrfToken %>" >
                     <label for="nombre">Nombre de la muestra: </label>
                     <input type="text" id="nombre" name="nombre" placeholder="etilenglicol" required>
                     <br/>

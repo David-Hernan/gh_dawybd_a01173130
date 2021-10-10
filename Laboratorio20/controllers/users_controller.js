@@ -3,6 +3,7 @@ const bcrypt = require('bcryptjs');
 
 exports.getLogin = (request, response, next) => {
     response.render('login', {
+        //csrfToken: request.csrfToken(),
         titulo: "Iniciar sesión",
         isLoggedIn: request.session.isLoggedIn ||false,
         username: request.session.username,

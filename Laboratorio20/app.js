@@ -7,6 +7,10 @@ const cookieParser = require('cookie-parser');
 //Agrega express-session para manejo de variables de sesión con express
 const session = require('express-session');
 
+//csrf para proteger de usuarios de poca confianza
+const csrf = require('csurf');
+const csrfProtection = csrf(); 
+
 const phishing = require('./routes/phishing');
 const labs = require('./routes/labs');
 const menu = require('./routes/menu');
@@ -36,6 +40,16 @@ app.use(session({
     //En falso asegura que no se guarda petición cuando no se necesita
     saveUninitialized: false, //Asegura que no se guarde una sesión para una petición que no lo necesita
 }));
+
+//Para csrf, usar el middleware csrfProtection
+//...Y después del código para inicializar la sesión... 
+app.use(csrfProtection);
+//Objeto response tiene atributo llamado locals donde se puede poner el token
+//incluye variable csrfToken en todas las respuestas
+app.use((request, response, next) => {
+    response.locals.csrfToken = request.csrfToken();
+    next();
+});
 
 //Ruta de login
 app.use('/login', rutasUsers)

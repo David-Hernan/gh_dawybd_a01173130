@@ -8,6 +8,7 @@
             <div class="col s12 m6 l4">
                 <br>
                 <form action="/login" method="POST">
+                    <input type="hidden" name="_csrf" value="<%= csrfToken %>" >
                     <label for="username">Nombre de usuario: </label>
                     <input type="text" id="username" name="username" placeholder="miguel_hidalgo" required>
                     <br/>
