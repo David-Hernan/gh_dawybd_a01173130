@@ -1,5 +1,7 @@
 const express = require('express');
 
+const isAuth = require('../util/is-auth');
+
 const router = express.Router(); 
 
 
@@ -7,7 +9,7 @@ const router = express.Router();
 const phishingController = require('../controllers/phishing_controller');
 
 //Para lista_menu.ejs
-router.get('/list', phishingController.getList);
+router.get('/list', isAuth, phishingController.getList);
 
 router.get('', phishingController.getPhishing);
 

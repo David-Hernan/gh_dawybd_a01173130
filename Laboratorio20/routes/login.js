@@ -1,5 +1,7 @@
 const express = require('express');
 
+const isAuth = require('../util/is-auth');
+
 const router = express.Router();
 
 //Establezco la ruta
@@ -9,11 +11,11 @@ router.get('', usersController.getLogin);
 
 router.post('', usersController.postLogin);
 
-router.get('/logout', usersController.getLogout); 
+router.get('/logout', isAuth, usersController.getLogout); 
 
 //Agregar usuario
-router.get('/adduser', usersController.getAdduser);
+router.get('/adduser', isAuth, usersController.getAdduser);
 
-router.post('/adduser', usersController.postAdduser); 
+router.post('/adduser', isAuth, usersController.postAdduser); 
 
 module.exports = router; 

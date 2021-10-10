@@ -1,5 +1,8 @@
 const express = require('express');
 
+//Middleware paara login
+const isAuth = require('../util/is-auth');
+
 const router = express.Router();
 
 //Establezco la ruta
@@ -18,8 +21,8 @@ router.get('/edit/:muestras_index', muestrasController.getModif);
 router.post('/edit/:muestras_index', muestrasController.postModif);
 //-------------------------------------------------------------------
 
-router.get('/add', muestrasController.getAdd);
+router.get('/add', isAuth, muestrasController.getAdd);
 
-router.post('/add', muestrasController.postAdd);
+router.post('/add', isAuth, muestrasController.postAdd);
  
 module.exports = router;  

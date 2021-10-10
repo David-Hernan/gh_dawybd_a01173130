@@ -13,6 +13,9 @@
                 <li><a href="/phishing/list">Ver lista de cuentas víctimas de phishing</a></li>
             <% } %>
             <li><a href="/muestras/list">Muestras</a></li>
+            <% if ( isLoggedIn ) { %>
+                <li><a href="/login/adduser">Agregar nuevo usuario</a></li>
+            <% } %>
             <br><br>
             <h3>Preguntas a responder:</h3>
             <dl><ol>

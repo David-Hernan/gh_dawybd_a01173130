@@ -57,6 +57,10 @@ exports.getList = (request, response, next) => {
 };
 
 exports.getAdd = (request, response, next) => {
+    //Evita acccesos no autorizados, pero es más práctico el middleware
+    /*if (!request.session.isLoggedIn) {
+        return response.redirect('/login');
+    }*/
     response.render('add_muestras', {
         titulo: "Agregar Muestra a la lista",
         isLoggedIn: request.session.isLoggedIn,
