@@ -22,4 +22,4 @@ router.get('/add', muestrasController.getAdd);
 
 router.post('/add', muestrasController.postAdd);
  
-module.exports = router;   
+module.exports = router;    
