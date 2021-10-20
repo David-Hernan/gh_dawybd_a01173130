@@ -1,39 +1,6 @@
 //Meter el modelo de platillos que contiene el arreglo
 const Muestra = require('../models/muestra');
-
-//-------------------------------------------------------------------
-//Moificar dato
-exports.getModif = (request, response, next) => {
-    console.log(request.cookies.ultima_muestra);
-    
-    Muestra.modificar1(request.params.muestras_index)
-        .then(([rows, fieldData]) => {
-            console.log(rows);
-            //Mober el response.render para acá
-            response.render('edit_muestra', { 
-                titulo: "Modificar Muestra",
-                isLoggedIn: request.session.isLoggedIn,
-                username: request.session.username,
-                lista_muestras: rows,
-            });
-        })
-        .catch(err => {
-            console.log(err);
-            response.status(302).redirect('/error');
-        });
-};
-
-exports.postModif = (request, response, next) => {
-    const muestra = new Muestra(request.body.nombre, request.body.funcion, 2);
-    muestra.modificar2()
-        .then(() => {
-            response.status(302).redirect('/muestras/list');
-        }).catch(err => {
-            console.log(err);
-            response.status(302).redirect('/error');
-        });
-};
-//-------------------------------------------------------------------
+const db = require('../util/database');
 
 //Mandar la lógica al controller
 exports.getList = (request, response, next) => {
@@ -83,4 +50,33 @@ exports.postAdd = (request, response, next) => {
         });
 };  
 
+//Moificar dato
+exports.getModif = (request, response, next) => {
+    //console.log(request.cookies.ultima_muestra);
+    Muestra.fetchOne(request.params.muestras_index)
+        .then(([rows, fieldData]) => {
+            //console.log(rows);
+            response.render('edit_muestra', {  
+                titulo: "Modificar Muestra",
+                isLoggedIn: request.session.isLoggedIn,
+                username: request.session.username,
+                lista_muestras: rows[0],
+            });
+        })
+        .catch(err => {
+            console.log(err);
+            response.status(302).redirect('/error');
+        });
+};
+
+exports.postModif = (request, response, next) => {
+    Muestra.update(request.body.nombre, request.body.funcion, request.body.indice_bodega, request.params.muestras_index)
+        .then(() => {
+            console.log("Updated lista");
+            response.status(302).redirect('/muestras/list');
+        }).catch(err => {
+            console.log(err);
+            response.status(302).redirect('/error');
+        });
+};
 

@@ -1,6 +1,6 @@
 const express = require('express');
 
-//Middleware paara login
+//Middleware para login
 const isAuth = require('../util/is-auth');
 
 const router = express.Router();
