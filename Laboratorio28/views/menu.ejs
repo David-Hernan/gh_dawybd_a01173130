@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <%- include('includes/head.ejs') %>
+
+    <body>
+        <link rel="stylesheet" href="../css/style.min.css">
+        <div  class="problem">
+            <header><h3><strong>Bienvenido al Laboratorio 28</strong></h3></header>
+            <header><h4><strong>Menú</strong></h4></header>
+            <li><a href="/labs">Laboratorios 3, 5, 6, 7 y 12</a></li>
+            <!--<li><a href="/phishing">Sitio simple de phishing</a></li>
+            <% if ( isLoggedIn ) { %>
+                <li><a href="/phishing/list">Ver lista de cuentas víctimas de phishing</a></li>
+            <% } %>-->
+            <li><a href="/muestras/list">Muestras</a></li>
+            <% if ( isLoggedIn ) { %>
+                <li><a href="/login/adduser">Agregar nuevo usuario</a></li>
+            <% } %>
+            <br><br>
+            <h3>Preguntas a responder:</h3>
+            <dl><ol>
+                <dt class="preguntas"><li><strong>¿Qué ventajas y desventajas tiene la integración de tus aplicaciones web con servicios web desarrollados por terceros?</strong></li></dt>
+                <dd><p>La principal ventaja es lo fácil que resulta agregar elementos que serían complicados si se trataran de implementar desde cero. La desventaja es que requieren ser investigados y, en ocasiones, la documentación no es clara, por otro lado, podrían ser peligrosos si la fuente es desconocida.</p></dd>
+            </ol></dl>
+            <br><br>
+            <br><br>
+            <br><br>
+            <br><br><br>
+            <p>Nota: En estos laboratorios le he dado más prioridad a la funcionalidad que a la estética</p>
+        </div>
+    </body>
+    <%- include('includes/footer.ejs') %> 
+
+    

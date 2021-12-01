@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html> 
+    <%- include('includes/head.ejs') %>
+
+    <body>
+        <link rel="stylesheet" href="../css/style.min.css">
+        <div  class="problem">
+            <a href="/phishing">Volver al sitio phishing</a>
+            <br>
+            <a href="/">Volver al menú</a>
+            <h2>Cuentas obtenidas</h2>
+
+            <% if (lista_cuentas.length > 0) { %>
+                <table class="table table-bordered border-primary table-striped table-hover">
+                    <thead>
+                        <tr>
+                          <th scope="col">#</th>
+                          <th scope="col">Correo</th>
+                          <th scope="col">Contraseña</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <% for (var i=0; i<lista_cuentas.length; i++) { %>
+                            <tr>
+                                <th scope="row"><%= i+1 %></th>
+                                <td><%= lista_cuentas[i] %></td>
+                                <td><%= lista_contras[i] %></td>
+                            </tr>
+                        <% } %>
+                      </tbody>
+                </table>
+            <% } else { %>
+                <br>
+                <h2>No hay cuentas hackeadas</h2>
+                <br><br>
+            <% } %>
+            <br><br><br><br><br><br><br><br><br>
+        </div>
+
+    </body>
+    <%- include('includes/footer.ejs') %>
+</html>
